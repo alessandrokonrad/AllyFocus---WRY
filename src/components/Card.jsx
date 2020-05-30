@@ -96,12 +96,12 @@ const Card = () => {
               justifyContent="center"
               flexDirection="column"
             >
-              <Box fontSize={26} textAlign="center" width={230}>
-                Claim free XRY Token from Faucet
+              <img draggable={false} width={170} src={MainImage} />
+              <Box my={2} />
+              <Box fontSize={26} textAlign="center" width={270}>
+                Claim free XRY Token from AllyFocus Faucet
               </Box>
               <Box my={2} />
-              <img draggable={false} width={170} src={MainImage} />
-              <Box my={3} />
               <Button
                 className="button"
                 variant="contained"
