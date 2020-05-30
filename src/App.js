@@ -3,6 +3,7 @@ import Card from "./components/Card";
 import DappInfo from "./components/DappInfo";
 import { Box, createMuiTheme, ThemeProvider } from "@material-ui/core";
 import Image1 from "./assets/image1.png";
+import TokenIcon from "./assets/image2.png";
 
 const theme = createMuiTheme({
   props: {
@@ -33,9 +34,11 @@ function App() {
             display="flex"
             alignItems="center"
           >
-            <img width={180} src={Image1}></img>
+            <img width={50} src={TokenIcon}></img>
+            <Box width={20} />
+            <Box fontWeight="bold">AllyFocus</Box>
             <Box width={10} />
-            <Box>AllyFocus</Box>
+            <img width={80} src={Image1}></img>
           </Box>
 
           <Card />
