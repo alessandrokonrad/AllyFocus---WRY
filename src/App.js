@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./components/Card";
 import DappInfo from "./components/DappInfo";
 import { Box, createMuiTheme, ThemeProvider } from "@material-ui/core";
+import Image1 from "./assets/image1.png";
 
 const theme = createMuiTheme({
   props: {
@@ -24,12 +25,22 @@ function App() {
           alignItems="center"
           flexDirection="column"
         >
-          <Box mt={10} mb={8} color="white" fontSize={40}>
-            AllyFocus
+          <Box
+            mt={5}
+            mb={8}
+            color="white"
+            fontSize={40}
+            display="flex"
+            alignItems="center"
+          >
+            <img width={180} src={Image1}></img>
+            <Box width={10} />
+            <Box>AllyFocus</Box>
           </Box>
 
           <Card />
         </Box>
+
         <DappInfo />
       </React.Fragment>
     </ThemeProvider>

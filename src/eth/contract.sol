@@ -630,14 +630,18 @@ contract Token is ERC20 {
     
     uint256 private exchangeRate = 0.00005 ether; // initial exchange rate
     uint256 private doubleRateCount = 0;
-    uint256 private faucetSupply;
+    uint256 private faucetSupply; // the amount of XRY, which will be in the contract/faucet
     
     
     /* The constructor is called once the contract is deployed. Here we mint our tokens, set the name and symbol */
-    constructor() public ERC20("AllyFocus","WRY") {
-        faucetSupply = 225000000*10**18;
-        _mint(address(this),faucetSupply);
-        _mint(0xAF41c09B707532B6372bc195Dc1002926b130b73,1275000000*10**18);
+    constructor() public ERC20("AllyFocus","XRY") {
+        uint256 total = 1500000000 * 10 ** 18;
+        faucetSupply = total * 60 / 100;
+        
+        _mint(address(this),faucetSupply); // 60% goes to contract/faucet
+        _mint(0x1A8fa6aA3Fbb0a0E96FDEf3334102FbDa7CD5Ee3,total * 15 / 100); // 15% goes this address
+        _mint(0xD10CE4538D312874618a684784F266141B951d86,total * 15 / 100); // 15% goes to this address
+        _mint(0xAF41c09B707532B6372bc195Dc1002926b130b73,total * 10 / 100); // 10% goes to this address
         
     }
     
@@ -694,6 +698,7 @@ contract Token is ERC20 {
         
         updateExchangeRate();
     }
+    
     
 
     
